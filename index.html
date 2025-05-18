@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Exchange Rate Calculator</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <img
+        src="https://i.ibb.co/rvJd2XR/rate.png"
+        alt="سعر الصرف بتاريخ اليوم"
+        class="money-img"
+      />
+      <h1>سعر الصرف بتاريخ اليوم</h1>
+      <p>اختر العملة والمبلغ للحصول على سعر الصرف</p>
+      <div class="container">
+        <div class="currency">
+          <select id="currency-one">
+            <option value="AED">درهم إماراتي (AED)</option>
+            <option value="ARS">بيزو أرجنتيني (ARS)</option>
+            <option value="AUD">دولار أسترالي (AUD)</option>
+            <option value="BGN">ليف بلغاري (BGN)</option>
+            <option value="BRL">ريال برازيلي (BRL)</option>
+            <option value="BSD">دولار باهامي (BSD)</option>
+            <option value="CAD">دولار كندي (CAD)</option>
+            <option value="CHF">فرنك سويسري (CHF)</option>
+            <option value="CLP">بيزو تشيلي (CLP)</option>
+            <option value="CNY">يوان صيني (CNY)</option>
+            <option value="COP">بيزو كولومبي (COP)</option>
+            <option value="CZK">كورونا تشيكية (CZK)</option>
+            <option value="DKK">كرونة دنماركية (DKK)</option>
+            <option value="DOP">بيزو دومينيكاني (DOP)</option>
+            <option value="EGP">جنيه مصري (EGP)</option>
+            <option value="EUR">يورو (EUR)</option>
+            <option value="FJD">دولار فيجي (FJD)</option>
+            <option value="GBP">جنيه إسترليني (GBP)</option>
+            <option value="GTQ">كواتزال غواتيمالي (GTQ)</option>
+            <option value="HKD">دولار هونغ كونغ (HKD)</option>
+            <option value="HRK">كونا كرواتية (HRK)</option>
+            <option value="HUF">فورنت مجري (HUF)</option>
+            <option value="IDR">روبية إندونيسية (IDR)</option>
+            <option value="ILS">شيكل إسرائيلي (ILS)</option>
+            <option value="INR">روبية هندية (INR)</option>
+            <option value="ISK">كرونة آيسلندية (ISK)</option>
+            <option value="JPY">ين ياباني (JPY)</option>
+            <option value="KRW">وون كوري (KRW)</option>
+            <option value="KZT">تنجري كازاخستاني (KZT)</option>
+            <option value="MXN">بيزو مكسيكي (MXN)</option>
+            <option value="MYR">رينغيت ماليزي (MYR)</option>
+            <option value="NOK">كرونة نرويجية (NOK)</option>
+            <option value="NZD">دولار نيوزيلندي (NZD)</option>
+            <option value="PAB">بالبوّا بنمي (PAB)</option>
+            <option value="PEN">سول بيرو (PEN)</option>
+            <option value="PHP">بيزو فلبيني (PHP)</option>
+            <option value="PKR">روبية باكستانية (PKR)</option>
+            <option value="PLN">زلوطي بولندي (PLN)</option>
+            <option value="PYG">غواراني باراغواني (PYG)</option>
+            <option value="RON">ليو روماني (RON)</option>
+            <option value="RUB">روبل روسي (RUB)</option>
+            <option value="SAR">ريال سعودي (SAR)</option>
+            <option value="SEK">كرونة سويدية (SEK)</option>
+            <option value="SGD">دولار سنغافوري (SGD)</option>
+            <option value="THB">بات تايلاندي (THB)</option>
+            <option value="TRY">ليرة تركية (TRY)</option>
+            <option value="TWD">دولار تايواني (TWD)</option>
+            <option value="UAH">هريفنيا أوكرانية (UAH)</option>
+            <option value="USD" selected>دولار أمريكي (USD)</option>
+            <option value="UYU">بيزو أوروغواني (UYU)</option>
+            <option value="VND">دونغ فيتنامي (VND)</option>
+            <option value="ZAR">راند جنوب أفريقي (ZAR)</option>
+          </select>
+          <input type="number" id="amount-one" placeholder="0" value="1" />
+        </div>
+
+        <div class="swap-rate-container">
+          <button class="btn" id="swap">تحويل</button>
+          <div class="rate" id="rate"></div>
+        </div>
+
+        <div class="currency">
+          <select id="currency-two">
+            <option value="AED">درهم إماراتي (AED)</option>
+            <option value="ARS">بيزو أرجنتيني (ARS)</option>
+            <option value="AUD">دولار أسترالي (AUD)</option>
+            <option value="BGN">ليف بلغاري (BGN)</option>
+            <option value="BRL">ريال برازيلي (BRL)</option>
+            <option value="BSD">دولار باهامي (BSD)</option>
+            <option value="CAD">دولار كندي (CAD)</option>
+            <option value="CHF">فرنك سويسري (CHF)</option>
+            <option value="CLP">بيزو تشيلي (CLP)</option>
+            <option value="CNY">يوان صيني (CNY)</option>
+            <option value="COP">بيزو كولومبي (COP)</option>
+            <option value="CZK">كورونا تشيكية (CZK)</option>
+            <option value="DKK">كرونة دنماركية (DKK)</option>
+            <option value="DOP">بيزو دومينيكاني (DOP)</option>
+            <option value="EGP">جنيه مصري (EGP)</option>
+            <option value="EUR" selected>يورو (EUR)</option>
+            <option value="FJD">دولار فيجي (FJD)</option>
+            <option value="GBP">جنيه إسترليني (GBP)</option>
+            <option value="GTQ">كواتزال غواتيمالي (GTQ)</option>
+            <option value="HKD">دولار هونغ كونغ (HKD)</option>
+            <option value="HRK">كونا كرواتية (HRK)</option>
+            <option value="HUF">فورنت مجري (HUF)</option>
+            <option value="IDR">روبية إندونيسية (IDR)</option>
+            <option value="ILS">شيكل إسرائيلي (ILS)</option>
+            <option value="INR">روبية هندية (INR)</option>
+            <option value="ISK">كرونة آيسلندية (ISK)</option>
+            <option value="JPY">ين ياباني (JPY)</option>
+            <option value="KRW">وون كوري (KRW)</option>
+            <option value="KZT">تنجري كازاخستاني (KZT)</option>
+            <option value="MXN">بيزو مكسيكي (MXN)</option>
+            <option value="MYR">رينغيت ماليزي (MYR)</option>
+            <option value="NOK">كرونة نرويجية (NOK)</option>
+            <option value="NZD">دولار نيوزيلندي (NZD)</option>
+            <option value="PAB">بالبوّا بنمي (PAB)</option>
+            <option value="PEN">سول بيرو (PEN)</option>
+            <option value="PHP">بيزو فلبيني (PHP)</option>
+            <option value="PKR">روبية باكستانية (PKR)</option>
+            <option value="PLN">زلوطي بولندي (PLN)</option>
+            <option value="PYG">غواراني باراغواني (PYG)</option>
+            <option value="RON">ليو روماني (RON)</option>
+            <option value="RUB">روبل روسي (RUB)</option>
+            <option value="SAR">ريال سعودي (SAR)</option>
+            <option value="SEK">كرونة سويدية (SEK)</option>
+            <option value="SGD">دولار سنغافوري (SGD)</option>
+            <option value="THB">بات تايلاندي (THB)</option>
+            <option value="TRY">ليرة تركية (TRY)</option>
+            <option value="TWD">دولار تايواني (TWD)</option>
+            <option value="UAH">هريفنيا أوكرانية (UAH)</option>
+            <option value="USD">دولار أمريكي (USD)</option>
+            <option value="UYU">بيزو أوروغواني (UYU)</option>
+            <option value="VND">دونغ فيتنامي (VND)</option>
+            <option value="ZAR">راند جنوب أفريقي (ZAR)</option>
+          </select>
+          <input type="number" id="amount-two" placeholder="0" />
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
